@@ -1,6 +1,7 @@
 #include <assert.h>
 #include <stdlib.h>
 #include <time.h>
+#include <string.h>
 #ifdef __APPLE__
 #include <sys/errno.h>
 #else
