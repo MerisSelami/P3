@@ -44,7 +44,7 @@ static void check_buddy_pool_full(struct buddy_pool *pool)
   // The highest list (kval_m) should have exactly one block: the base
   struct avail* head = &pool->avail[pool->kval_m];
   TEST_ASSERT_EQUAL_PTR(head->next, head->prev); // there's exactly one in the list
-  TEST_ASSERT_NOT_EQUAL_PTR(head, head->next);   // it shouldn't point to itself
+  TEST_ASSERT_TRUE(head != head->next);   // it shouldn't point to itself
   TEST_ASSERT_EQUAL_UINT16(BLOCK_UNUSED, head->tag);
   TEST_ASSERT_EQUAL_UINT16(pool->kval_m, head->kval);
 
